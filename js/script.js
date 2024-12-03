@@ -41009,7 +41009,7 @@ var dracoLoader = new _DRACOLoader.DRACOLoader();
 dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
 gltfLoader.setDRACOLoader(dracoLoader);
 var loader = new _STLLoader.STLLoader();
-loadModelGLTF('./../../images/KUKA_Scara.glb', {
+loadModelGLTF('./images/KUKA_Scara.glb', {
   position: {
     x: 0,
     y: -150,
@@ -41035,7 +41035,7 @@ loadModelGLTF('./../../images/KUKA_Scara.glb', {
   // Metallischer Effekt
   roughness: 0.2 // Glätte des Materials
 });
-loadModel('./../../images/LinearMotion.stl', {
+loadModel('./images/LinearMotion.stl', {
   position: {
     x: 600,
     y: 250,

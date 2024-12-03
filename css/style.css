@@ -1,0 +1,443 @@
+#Icon-GOYA{
+    position: relative;
+    width: 12vh;
+    margin-right: 2vh;
+    padding-top: 2vh;
+    margin-left: 92%;
+    
+}
+#Start-Icon{
+    position: absolute;
+    top: 3vh;
+    width: 2vh;
+    height: 2vh;
+    left: 75%;
+}
+#Icon-Bosch{
+    position: absolute;
+    margin-top: 3vh;
+    margin-left: 40%;
+}
+#Header-Line{
+    position: absolute;
+    width: 100%;
+    height: 15vh;
+    background-color: #071930
+}
+/* Gesamte Body-Stile */
+body {
+    font-family: 'Arial', sans-serif;
+    /* justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); */
+}
+
+
+#Select-Body {
+    position: absolute;
+    top: 8vh;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2vh;
+}
+
+/* Button-Stile */
+.Select-Button {
+    background-color: #ffffff;
+    border: 2px solid #dfe4ea;
+    border-radius: 12px;
+    width: 15vh;
+    height: 12vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.Select-Button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+    border: 8px solid #b60015;
+}
+
+/* Icon-Stile */
+.Select-Icon {
+    width: 6vh;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.Select-Icon svg {
+    width: 100%;
+    height: 100%;
+    fill: #007bff; /* Standardfüllfarbe */
+    transition: fill 0.3s ease;
+}
+
+.Select-Button:hover .Select-Icon svg {
+    fill: #0056b3; /* Hover-Farbe */
+}
+
+
+/* Container für die Tabelle */
+.table-container {
+    position: absolute; /* Absolute Position */
+    top: 20vh; /* Abstand vom oberen Rand */
+    width: 45vh; /* Festgelegte Breite der Tabelle */
+    right: 2vh;
+    background-color: #ffffff;
+    border-radius: 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    display: none;
+}
+#asset-table{
+    position: absolute;
+    left: 22vh;
+}
+
+/* Tabellen-Überschrift */
+h1 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #333333;
+    text-align: center;
+}
+
+/* Tabelle */
+.modern-table {
+    font-size: 18px;
+    border-collapse: collapse;
+}
+
+.modern-table thead {
+    background-color: #071930;
+    color: #ffffff;
+}
+
+.modern-table th,
+.modern-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #dddddd;
+}
+
+.modern-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.modern-table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.modern-table th {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Statusfarben */
+.status {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.status.active {
+    color: #ffffff;
+    background-color: #28a745; /* Grün */
+}
+
+.status.idle {
+    color: #ffffff;
+    background-color: #ffc107; /* Gelb */
+}
+
+.status.error {
+    color: #ffffff;
+    background-color: #dc3545; /* Rot */
+}
+#Title-Container1{
+    font-size: 2.75vh;
+    position: absolute;
+    top: 15vh;
+    left: 33.5%;
+    color:#b60015;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+}
+#Title-Container2{
+    font-size: 2.75vh;
+    position: absolute;
+    top: 44.5vh;
+    left: 35%;
+    color:#b60015;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+}
+/* Rahmen für die Kacheln */
+.tile-wrapper {
+    position: absolute;
+    top: 21vh;
+    left: 21%;
+    width: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+    padding: 1vh;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+
+}
+/* Rahmen für die Kacheln */
+.tile-wrapper2 {
+    position: absolute;
+    left: 21%;
+    top: 50vh;
+    width: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling der einzelnen Kacheln */
+.tile {
+    width: 28vh;
+    height: 20vh;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    padding: 1vh;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Bild innerhalb der Kachel */
+.tile img {
+    height:12vh;
+}
+
+/* Text unter dem Bild */
+.name {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+}
+/* Datenfluss-Linie */
+.data-line3 {
+    position: absolute;
+    top: 10vh; /* Vertikal zentriert */
+    left: 10vh; /* Startpunkt */
+    width: 5vh; /* Breite der Linie */
+    height: 50vh; /* Dicke der Linie */
+    background: linear-gradient(90deg, #071930 25%, #1fd9fd 50%, #071930 75%);
+    background-size: 200% 100%;
+    animation: flow 8s linear infinite; /* Animationsschleife */
+    z-index: 0; /* Linie im Hintergrund */
+    transform: translateY(-50%); /* Perfekte Zentrierung */
+}
+
+/* Datenfluss-Linie */
+.data-line2 {
+    position: absolute;
+    top: 19.5vh; /* Vertikal zentriert */
+    left: 20%; /* Startpunkt */
+    width: 80vh; /* Länge der Linie */
+    height: 25vh; /* Dicke der Linie */
+    border-radius: 15px;
+    background: linear-gradient(90deg, #071930 25%, #1fd9fd 50%, #071930 75%);
+    background-size: 200% 100%;
+    animation: flow 8s linear infinite;
+    z-index: 0; /* Linie im Hintergrund */
+    overflow:hidden;
+}
+
+/* Datenfluss-Linie */
+.data-line {
+    position: absolute;
+    top: 49vh; /* Vertikal zentriert */
+    left: 20%; /* Startpunkt */
+    width: 80vh; /* Länge der Linie */
+    height: 25vh; /* Dicke der Linie */
+    border-radius: 15px;
+    background: linear-gradient(90deg, #b60015 25%, #1fd9fd 50%, #b60015 75%);
+    background-size: 200% 100%;
+    animation: flow 8s linear infinite;
+    z-index: 0; /* Linie im Hintergrund */
+}
+
+/* Animation für den Datenfluss */
+@keyframes flow {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* Scanner Container */
+/* Scanner Container */
+#scanner-container {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 20vh;
+    left: 30%;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Canvas for Visualization */
+#scanner-visualization {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Scanner Image */
+#scanner-image {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    pointer-events: none; /* Damit der Scanner nicht anklickbar ist */
+}
+
+/* Scanner Waves */
+.scanner-wave {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(0, 123, 255, 0.5); /* Wellenfarbe */
+    border-radius: 50%;
+    animation: wave-animation 3s infinite ease-out;
+    opacity: 0;
+    z-index: 0;
+}
+
+/* Animation für die Wellen */
+@keyframes wave-animation {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+
+/* Container für QR-Code und Anleitung */
+.qr-container {
+    position: absolute;
+    left: 28%;
+    top: 20vh;
+    width: 20vh;
+    height: 20vh;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.qr-container h1 {
+    font-size: 24px;
+    color: #333;
+    position: absolute;
+}
+
+.qr-container p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+#qr-code {
+
+}
+.ar-guide {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    text-align: center;
+    position: absolute;
+    right: 2vh;
+    top: 15vh;
+}
+
+.ar-guide h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.ar-guide p {
+    font-size: 16px;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.ar-guide ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ar-guide li {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.ar-guide li::before {
+    content: "✓";
+    color: #007bff;
+    margin-right: 10px;
+}
+
+.ar-guide a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.ar-guide a:hover {
+    background-color: #0056b3;
+}

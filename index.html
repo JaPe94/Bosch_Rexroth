@@ -1,2 +1,761 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" /><link rel="stylesheet" href="./css/style.css" /><title>Bosch_Rexroth</title><style>.password-screen{ position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgb(232, 230, 230); color: white; display: flex; justify-content: center; align-items: center; z-index: 9999;} .password-container{ text-align: center; background: white; color: #071930; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);} .password-container h2{ margin-bottom: 20px;} .password-container input{ width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;} .password-container button{ background: #071930; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;} .password-container button:hover{ background: #0056b3;} .hidden{ display: none;} </style></head><body id="body"><div class="password-screen" id="password-screen"><div id="Start-Icon"><img width="350vh" src="./images/ctrlXXGOYA.png" /></div><div class="password-container"><h4>Enter Password to Access</h4><input type="password" id="password-input" placeholder="Enter Password" /><button onclick="checkPassword()">Submit</button><p id="error-message" style="color: red; display: none;">Incorrect Password. Try Again. </p></div></div><div id="main-content" class="hidden"><div id="Header-Line"><div id="Icon-Bosch"><img height="50px" src="./images/ctrlXGoya.PNG" alt="Bosch Icon" /></div></div><div class="container"><div id="Title-Container1">Controller Layer </div><div id="Title-Container2">Device Layer </div><div class="data-line2"></div><div class="tile-wrapper"><div class="tile" id="tile1"><img src="./images/ctrlX1.PNG" width="70vh" alt="Tile Image" /><div class="name">ctrlX core</div></div><div class="tile" id="tile2"><img src="./images/ctrlX2.PNG" width="130vh" alt="Tile Image" /><div class="name">ctrlX I/O</div></div><div class="tile" id="tile3"><img src="./images/ctrlX3.PNG" width="25vh" alt="Tile Image" /><div class="name">ctrlX Drive</div></div></div><div class="data-line"></div><div class="tile-wrapper2"><div class="tile" id="tile4"><img src="./images/KUKA_Scara.PNG" width="100vh" alt="Tile Image" /><div class="name">KR Scara</div></div><div class="tile" id="tile5"><img src="./images/LinearMotion.PNG" width="130vh" alt="Tile Image" /><div class="name">Linearmodule</div></div><div class="tile" id="tile6"><img src="./images/SICKS300.PNG" width="110vh" alt="Tile Image" /><div class="name">SICK S300</div></div></div></div><div id="Select-Table"><div id="Select-Body"><button class="Select-Button" name="0"><div class="Select-Icon" name="0"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M21.5315 11.5857L20.75 10.9605V21.25H22C22.4142 21.25 22.75 21.5858 22.75 22C22.75 22.4143 22.4142 22.75 22 22.75H2.00003C1.58581 22.75 1.25003 22.4143 1.25003 22C1.25003 21.5858 1.58581 21.25 2.00003 21.25H3.25003V10.9605L2.46855 11.5857C2.1451 11.8445 1.67313 11.792 1.41438 11.4686C1.15562 11.1451 1.20806 10.6731 1.53151 10.4144L9.65742 3.91366C11.027 2.818 12.9731 2.818 14.3426 3.91366L22.4685 10.4144C22.792 10.6731 22.8444 11.1451 22.5857 11.4686C22.3269 11.792 21.855 11.8445 21.5315 11.5857ZM12 6.75004C10.4812 6.75004 9.25003 7.98126 9.25003 9.50004C9.25003 11.0188 10.4812 12.25 12 12.25C13.5188 12.25 14.75 11.0188 14.75 9.50004C14.75 7.98126 13.5188 6.75004 12 6.75004ZM13.7459 13.3116C13.2871 13.25 12.7143 13.25 12.0494 13.25H11.9507C11.2858 13.25 10.7129 13.25 10.2542 13.3116C9.76255 13.3777 9.29128 13.5268 8.90904 13.9091C8.52679 14.2913 8.37773 14.7626 8.31163 15.2542C8.24996 15.7129 8.24999 16.2858 8.25003 16.9507L8.25003 21.25H9.75003H14.25H15.75L15.75 16.9507L15.75 16.8271C15.7498 16.2146 15.7462 15.6843 15.6884 15.2542C15.6223 14.7626 15.4733 14.2913 15.091 13.9091C14.7088 13.5268 14.2375 13.3777 13.7459 13.3116Z" fill="#071930" /><g opacity="0.5"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.75 9.5C10.75 8.80964 11.3096 8.25 12 8.25C12.6904 8.25 13.25 8.80964 13.25 9.5C13.25 10.1904 12.6904 10.75 12 10.75C11.3096 10.75 10.75 10.1904 10.75 9.5Z" fill="#071930" /><path fill-rule="evenodd" clip-rule="evenodd" d="M10.75 9.5C10.75 8.80964 11.3096 8.25 12 8.25C12.6904 8.25 13.25 8.80964 13.25 9.5C13.25 10.1904 12.6904 10.75 12 10.75C11.3096 10.75 10.75 10.1904 10.75 9.5Z" fill="#071930" /></g><path opacity="0.5" d="M12.0494 13.25C12.7142 13.25 13.2871 13.2499 13.7458 13.3116C14.2375 13.3777 14.7087 13.5268 15.091 13.909C15.4732 14.2913 15.6223 14.7625 15.6884 15.2542C15.7462 15.6842 15.7498 16.2146 15.75 16.827L15.75 21.25H8.25L8.25 16.9506C8.24997 16.2858 8.24993 15.7129 8.31161 15.2542C8.37771 14.7625 8.52677 14.2913 8.90901 13.909C9.29126 13.5268 9.76252 13.3777 10.2542 13.3116C10.7129 13.2499 11.2858 13.25 11.9506 13.25H12.0494Z" fill="#071930" /><path opacity="0.5" d="M16 3H18.5C18.7761 3 19 3.22386 19 3.5L19 7.63955L15.5 4.83955V3.5C15.5 3.22386 15.7239 3 16 3Z" fill="#071930" /></svg></div><span class="button-label">Home</span></button><button class="Select-Button" name="1"><div class="Select-Icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" ><rect x="252.257" y="131.108" transform="matrix(-0.5882 -0.8087 0.8087 -0.5882 414.334 510.6573)" style="fill: #0052b4" width="169.844" height="37.463" /><path style="fill: #071930" d="M455.805,318.439h-37.463v-49.951c0-13.772-11.204-24.976-24.976-24.976 s-24.976,11.204-24.976,24.976v49.951h-37.463v-49.951c0-34.429,28.01-62.439,62.439-62.439s62.439,28.01,62.439,62.439V318.439z" /><g><polyline style="fill: #071930" points="199.805,280.976 349.659,443.317 237.268,443.317 110.31,305.952 " /><polygon style="fill: #071930" points="110.31,206.048 224.78,81.171 287.22,81.171 291.382,131.122 199.805,231.024 " /><rect x="56.195" y="437.073" style="fill: #071930" width="337.171" height="74.927" /></g><rect x="224.78" y="437.073" style="fill: #071930" width="168.585" height="74.927" /><circle style="fill: #071930" cx="137.366" cy="256" r="62.439" /><path style="fill: #003778" d="M137.366,337.171c-44.758,0-81.171-36.413-81.171-81.171s36.413-81.171,81.171-81.171 s81.171,36.413,81.171,81.171S182.123,337.171,137.366,337.171z M137.366,212.293c-24.1,0-43.707,19.607-43.707,43.707 s19.607,43.707,43.707,43.707S181.073,280.1,181.073,256S161.466,212.293,137.366,212.293z" /><circle style="fill: #071930" cx="287.22" cy="81.171" r="62.439" /><path style="fill: #003778" d="M287.22,162.341c-44.758,0-81.171-36.413-81.171-81.171S242.462,0,287.22,0 s81.171,36.413,81.171,81.171S331.977,162.341,287.22,162.341z M287.22,37.463c-24.1,0-43.707,19.607-43.707,43.707 s19.607,43.707,43.707,43.707s43.707-19.607,43.707-43.707S311.32,37.463,287.22,37.463z" /></svg></div><span class="button-label">Robots</span></button><button class="Select-Button" name="2"><div class="Select-Icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" ><rect x="16.696" y="253.797" style="fill: #b0b0b0" width="55.786" height="33.391" /><rect y="211.178" style="fill: #071930" width="33.391" height="118.628" /><path style="fill: #071930" d="M494.32,196.801l-4.858-8.131h-85.516v39.564h-8.557v-57.371h-44.32l-28.138-24.95h-46.53v-22.695 h14.966V89.828H172.742v33.391h14.966v22.695h-48.443l-28.138,24.95H55.791v199.255h83.474l58.709,52.054h197.414v-58.444h8.557 v39.565h85.516l4.858-8.132c1.81-3.027,17.68-31.537,17.68-99.181S496.13,199.83,494.32,196.801z" /><path style="fill: #071930" d="M494.32,196.801l-4.858-8.131h-85.516v39.564h-8.557v-57.371h-44.32l-28.138-24.95h-46.53v-22.695 h14.966V89.828h-59.312v332.345h163.334v-58.444h8.557v39.565h85.516l4.858-8.132c1.81-3.027,17.68-31.537,17.68-99.181 S496.13,199.83,494.32,196.801z" /><path style="fill: #f1f1f1" d="M468.927,369.903h-31.59v-39.565h-75.34v58.444H210.646l-58.709-52.054H89.183V204.255h34.617 l28.138-24.95h35.772H221.1v-33.391v-22.695h21.909v22.695v33.391h33.391h33.858l28.138,24.95h23.601v57.371h75.34v-39.564h31.59 c3.873,11.386,9.681,34.956,9.681,73.921C478.609,334.948,472.801,358.516,468.927,369.903z" /><path style="fill: #d7d7d7" d="M468.927,369.903h-31.59v-39.565h-75.34v58.444H232.054V123.22h10.955v22.695v33.391H276.4h33.858 l28.138,24.95h23.601v57.371h75.34v-39.564h31.59c3.873,11.386,9.681,34.956,9.681,73.921 C478.609,334.948,472.801,358.516,468.927,369.903z" /><polygon style="fill: #071930" points="247.542,370.834 216.566,358.365 239.4,301.643 175.272,301.643 216.566,199.061 247.542,211.53 224.709,268.252 288.837,268.252 " /><g><polygon style="fill: #071930" points="247.542,211.53 231.962,205.258 231.962,250.235 " /><polygon style="fill: #071930" points="288.837,268.252 231.962,268.252 231.962,301.643 239.4,301.643 231.962,320.122 231.962,364.562 247.542,370.834 " /></g></svg></div><span class="button-label">Motion</span></button><button class="Select-Button" name="3"><div class="Select-Icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" color="#071930" fill="#071930" viewBox="0 0 16 16"><path color="#071930" fill="#071930" d="M6.634 1.135A7 7 0 0 1 15 8a.5.5 0 0 1-1 0 6 6 0 1 0-6.5 5.98v-1.005A5 5 0 1 1 13 8a.5.5 0 0 1-1 0 4 4 0 1 0-4.5 3.969v-1.011A2.999 2.999 0 1 1 11 8a.5.5 0 0 1-1 0 2 2 0 1 0-2.5 1.936v-1.07a1 1 0 1 1 1 0V15.5a.5.5 0 0 1-1 0v-.518a7 7 0 0 1-.866-13.847"/></svg></div><span class="button-label">Scaner</span></button><button class="Select-Button" name="3"><div class="Select-Icon"><svg xmlns="http://www.w3.org/2000/svg" fill="#071930" color="#071930" viewBox="0 0 16 16"><path color="#071930" fill="#071930" d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8z"/></svg></div><span class="button-label">Assets</span></button><button class="Select-Button" name="4"><div class="Select-Icon"><svg width="800px" height="800px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" ><path d="M430.403803 30.365353L275.476805 77.487569 159.535812 171.053984 107.328464 284.282907l-10.170262 96.956502 17.628455 114.245949 44.749155 99.668573 65.767697 65.767697V904.66892l171.877437 46.783207 138.654579 21.69656h98.651546v-174.928515l92.888398-18.306472V171.053984l-118.314054-105.77073L430.403803 30.365353z" fill="#071930" /><path d="M443.286136 54.095965a326.804435 326.804435 0 0 1 169.504375 46.444199s96.956503 69.835803 101.702625 96.278485h62.716619a381.384844 381.384844 0 1 0-581.400007 474.612251v264.087816L655.166605 1024v-201.032189H706.017917a54.580409 54.580409 0 0 0 54.580409-54.580409v-162.046182a101.702625 101.702625 0 0 0-3.051078-24.747639 380.706827 380.706827 0 0 0 20.001516-38.986006L739.918792 536.505417c-5.085131 11.187289-20.679534 6.441166-27.459708 16.950438l-11.865307 19.323498 5.42414 22.035569a48.139243 48.139243 0 0 1 0 11.526298v162.046182h-105.092712v189.505892l-351.891083-67.80175v-243.747292L231.405667 630.410841a331.211549 331.211549 0 0 1-84.752188-109.838835 327.482453 327.482453 0 0 1 296.632657-466.476041" fill="#071930" /><path d="M859.92789 133.424013A48.139243 48.139243 0 0 1 909.423168 181.563255v384.096915a48.139243 48.139243 0 0 1-48.139243 48.139242h-2.034052a48.139243 48.139243 0 0 1-48.139243-43.732129L804.330455 508.706699l-61.021575 15.255394a154.248981 154.248981 0 0 1-37.290963 4.746123 153.570964 153.570964 0 1 1 0-307.141928 154.58799 154.58799 0 0 1 37.290963 4.746122l61.021575 15.255394 5.42414-62.716619a48.139243 48.139243 0 0 1 48.139243-43.732128z m0-53.902391h-2.034052a101.702625 101.702625 0 0 0-101.702626 92.888397 207.473355 207.473355 0 1 0 0 402.403387 101.702625 101.702625 0 0 0 101.702626 92.888397h2.034052a101.702625 101.702625 0 0 0 101.702625-101.702625V181.563255a101.702625 101.702625 0 0 0-101.702625-101.702625z" fill="#071930" /><path d="M706.017917 321.912878A51.868339 51.868339 0 1 1 654.149579 373.103199 51.868339 51.868339 0 0 1 706.017917 321.912878z m0-53.902391a105.431721 105.431721 0 1 0 105.431722 105.092712A105.431721 105.431721 0 0 0 706.017917 268.010487z" fill="#071930" /><path d="M79.529747 330.049088h465.798023V276.146697H79.529747z m0 126.789273h465.798023v-53.563383H79.529747z" fill="#434A54" /><path d="M777.548764 189.021448l35.934927-64.072654 52.885365-13.56035 64.750672 38.986006 12.543323 123.399186-12.543323 301.717787-28.476735 53.224374h-75.598952l-35.595918-34.917901v-40.342041h-105.092713l-84.752188-34.917902-47.461225-69.157785-22.374577-79.328047 22.374577-81.701109 67.462742-74.581925 99.329563-24.747639h56.614462z" fill="#071930" /><path d="M704.661882 372.086173m-101.702625 0a101.702625 101.702625 0 1 0 203.405251 0 101.702625 101.702625 0 1 0-203.405251 0Z" fill="#071930" /></svg></div><span class="button-label">AR</span></button></div></div><div class="table-container"><h1>ctrlX - System Information</h1><table class="modern-table" id="ctrlx-table"><thead><tr><th>Parameter</th><th>Value</th><th>Status</th></tr></thead><tbody><tr><td>IP Address</td><td id="ip-address">192.168.0.100</td><td class="status active">Connected</td></tr><tr><td>CPU Usage</td><td id="cpu-usage">45%</td><td class="status active">Normal</td></tr><tr><td>Temperature</td><td id="temperature">65°C</td><td class="status idle">Warning</td></tr><tr><td>Uptime</td><td id="uptime">12d 5h 30m</td><td class="status active">Running</td></tr><tr><td>Firmware Version</td><td id="firmware-version">1.12.3</td><td class="status active">Updated</td></tr><tr><td>Memory Usage</td><td id="memory-usage">78%</td><td class="status error">Critical</td></tr></tbody></table></div><div class="table-container"><h1>KUKA Scara - Joint Positions</h1><table class="modern-table" id="joint-table"><thead><tr><th>Joint Name</th><th>Angle Position (°)</th><th>Speed (%)</th><th>Status</th></tr></thead><tbody><tr id="joint-1" data-joint="1"><td>Joint 1</td><td class="angle">45</td><td class="speed">80</td><td class="status active">Active</td></tr><tr id="joint-2" data-joint="2"><td>Joint 2</td><td class="angle">90</td><td class="speed">60</td><td class="status idle">Idle</td></tr><tr id="joint-3" data-joint="3"><td>Joint 3</td><td class="angle">-30</td><td class="speed">50</td><td class="status error">Error</td></tr><tr id="joint-4" data-joint="4"><td>Joint 4</td><td class="angle">0</td><td class="speed">100</td><td class="status active">Active</td></tr></tbody></table></div><div class="table-container"><h1>MK110 Linear Module - Status</h1><table class="modern-table" id="mk110-table"><thead><tr><th>Parameter</th><th>Value</th><th>Status</th></tr></thead><tbody><tr><td>Position (mm)</td><td id="position">150</td><td class="status active">In Position</td></tr><tr><td>Velocity (mm/s)</td><td id="velocity">250</td><td class="status active">Normal</td></tr><tr><td>Temperature (°C)</td><td id="temperature">45</td><td class="status active">Normal</td></tr><tr><td>Uptime</td><td id="uptime">72h 30m</td><td class="status active">Running</td></tr><tr><td>Load (%)</td><td id="load">65</td><td class="status active">Normal</td></tr><tr><td>Motor Status</td><td id="motor-status">Active</td><td class="status active">Running</td></tr></tbody></table></div><div id="scanner-container"><div id="scanner-visualization"></div><img id="scanner-image" src="./images/SICKS300.PNG" alt="Scanner"><div class="scanner-wave"></div><div class="scanner-wave"></div></div><div class="table-container" id="asset-table"><table class="modern-table"><thead><tr><th>Device</th><th>Model</th><th>Location</th><th>Manual (PDF)</th><th>Next Maintenance</th><th>Power Usage (kWh)</th><th>CO₂ Emissions (kg)</th><th>Errors</th><th>Firmware</th><th>Network Status</th><th>Status</th></tr></thead><tbody><tr><td>KR Scara</td><td>KR Scara V2</td><td>Production Line A</td><td><a href="./images/KUKA.pdf" target="_blank">Download</a></td><td id="kr-scara-next-maintenance">2025-02-15</td><td id="kr-scara-power">125.8</td><td id="kr-scara-co2">32.1</td><td id="kr-scara-errors">None</td><td id="kr-scara-firmware">1.12.3</td><td id="kr-scara-network">Online</td><td class="status active">Operational</td></tr><tr><td>Sick S300</td><td>S300 V3</td><td>Safety Zone B</td><td><a href="./images/Bosch.pdf" target="_blank">Download</a></td><td id="sick-s300-next-maintenance">2025-03-10</td><td id="sick-s300-power">97.5</td><td id="sick-s300-co2">26.4</td><td id="sick-s300-errors">Laser alignment issue</td><td id="sick-s300-firmware">2.8.0</td><td id="sick-s300-network">Online</td><td class="status idle">Needs Inspection</td></tr><tr><td>Bosch Rexroth Linear Module</td><td>MK110</td><td>Assembly Line C</td><td><a href="./images/SICK.PDF" target="_blank">Download</a></td><td id="rexroth-next-maintenance">2025-04-05</td><td id="rexroth-power">185.3</td><td id="rexroth-co2">47.6</td><td id="rexroth-errors">High temperature detected</td><td id="rexroth-firmware">3.5.1</td><td id="rexroth-network">Offline</td><td class="status error">Critical</td></tr></tbody></table></div><div class="table-container"><h1>SICK S300 - Scanner Parameters</h1><table class="modern-table" id="scanner-table"><thead><tr><th>Parameter</th><th>Value</th><th>Unit</th><th>Status</th></tr></thead><tbody><tr id="field-range-safety" data-param="safety-range"><td>Safety Field Range</td><td class="value">2</td><td class="unit">m</td><td class="status active">Active</td></tr><tr id="field-range-warning" data-param="warning-range"><td>Warning Field Range</td><td class="value">8</td><td class="unit">m</td><td class="status active">Active</td></tr><tr id="scan-angle" data-param="scan-angle"><td>Scan Angle</td><td class="value">270</td><td class="unit">°</td><td class="status idle">Idle</td></tr><tr id="response-time" data-param="response-time"><td>Response Time</td><td class="value">60</td><td class="unit">ms</td><td class="status active">Active</td></tr><tr id="protection-class" data-param="protection-class"><td>Protection Class</td><td class="value">IP65</td><td class="unit">-</td><td class="status active">Active</td></tr><tr id="operating-temp" data-param="operating-temp"><td>Operating Temperature</td><td class="value">-10 to +50</td><td class="unit">°C</td><td class="status active">Active</td></tr><tr id="weight" data-param="weight"><td>Weight</td><td class="value">1.3</td><td class="unit">kg</td><td class="status idle">Idle</td></tr></tbody></table></div></div><div class="ar-guide"><h1>How to Use AR Content</h1><p>Follow these steps to enjoy Augmented Reality content on your smartphone:</p><h2>For Android</h2><ul><li>Ensure your device supports ARCore (most modern Android devices do).</li><li>Open the provided link in Chrome or another AR-compatible browser.</li><li>Grant permissions to access your camera when prompted.</li><li>Point your camera at a flat surface to anchor the AR content.</li></ul><h2>For iPhone</h2><ul><li>Ensure your device supports ARKit (iPhone 6S or later).</li><li>Open the link in Safari for the best experience.</li><li>Allow access to your camera when asked.</li><li>Point your camera at a flat surface to place the AR object.</li></ul></div><div class="qr-container"><div id="qr-code"></div><img src="./images/qrCode.PNG" alt="QR Code"></div></div></div><script>const correctPassword="1"; // Setze hier das gewünschte Passwort function checkPassword(){ const inputPassword=document.getElementById("password-input").value; const errorMessage=document.getElementById("error-message"); if (inputPassword===correctPassword){ // Verstecke die Passwortseite und zeige den Inhalt document.getElementById("password-screen").classList.add("hidden"); document.getElementById("main-content").classList.remove("hidden");} else{ // Zeige eine Fehlermeldung an errorMessage.style.display="block";}}
-</script><div id="webgl"></div><script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script><script src="./js/script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Bosch_Rexroth</title>
+    <style>
+      /* Startseite (Passwortschutz) */
+      .password-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(232, 230, 230);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      .password-container {
+        text-align: center;
+        background: white;
+        color: #071930;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .password-container h2 {
+        margin-bottom: 20px;
+      }
+
+      .password-container input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .password-container button {
+        background: #071930;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .password-container button:hover {
+        background: #0056b3;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body id="body">
+   
+    <div class="password-screen" id="password-screen">
+      <div id="Start-Icon">
+        <img
+          width="350vh"
+          src="./images/ctrlXXGOYA.png"
+        />
+      </div>
+      <div class="password-container">
+        <h4>Enter Password to Access</h4>
+        <input
+          type="password"
+          id="password-input"
+          placeholder="Enter Password"
+        />
+        <button onclick="checkPassword()">Submit</button>
+        <p id="error-message" style="color: red; display: none;">
+          Incorrect Password. Try Again.
+        </p>
+      </div>
+    </div>
+
+    <!-- Der Rest der Seite -->
+    <div id="main-content" class="hidden">
+
+    <div id="Header-Line">
+      <div id="Icon-Bosch">
+        <img
+          height="50px"
+          src="./images/ctrlXGoya.PNG"
+          alt="Bosch Icon"
+        />
+      </div>
+      <!-- <div id="Icon-GOYA">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 698.85 823.44">
+          <defs>
+            <style>
+              .cls-1 {
+                fill: #ffffef;
+                stroke-width: 4.72px;
+              }
+              .cls-1,
+              .cls-2,
+              .cls-3 {
+                stroke: #ffffef;
+                stroke-miterlimit: 10;
+              }
+              .cls-2 {
+                stroke-width: 11.01px;
+              }
+              .cls-2,
+              .cls-3 {
+                fill: none;
+              }
+              .cls-4 {
+                fill: #464646;
+              }
+              .cls-3 {
+                stroke-width: 9.44px;
+              }
+              .cls-5 {
+                fill: #3c3c3c;
+              }
+              .cls-6 {
+                fill: #333;
+                stroke: #333;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-width: 26.75px;
+              }
+            </style>
+          </defs>
+          <g>
+            <polygon
+              class="cls-6"
+              points="349.98 15.22 16.48 213.94 16.48 611.36 349.98 810.07 684.87 611.36 683.63 213.58 349.98 15.22"
+            />
+            <g>
+              <path
+                class="cls-5"
+                d="M685.4,196.48L356.08,1.57c-1.91-1.1-7.29-2.81-7.29-.18V405.35c0,1.01,346.52,209.24,346.52,209.24,1.9,1.17,1.74-6.25,1.77-8.49l1.77-391.23c.12-9.39-5.34-13.75-13.44-18.39Z"
+              />
+              <path
+                class="cls-4"
+                d="M13.44,196.3L342.77,1.39c1.54-.88,4.49-1.78,5.59-.95,.27,.2,.43,.51,.43,.95V405.35c0,1.01-345.25,209.06-345.25,209.06-1.9,1.17-1.74-6.25-1.77-8.49L0,214.69c-.12-9.39,5.34-13.75,13.44-18.39Z"
+              />
+            </g>
+          </g>
+          <circle class="cls-1" cx="421.96" cy="211.59" r="15.03" />
+          <circle class="cls-1" cx="248.94" cy="210.72" r="15.03" />
+          <circle class="cls-1" cx="248.16" cy="552.11" r="15.03" />
+          <line class="cls-3" x1="248.94" y1="227.32" x2="248.94" y2="538.74" />
+          <line class="cls-3" x1="421.96" y1="226.62" x2="421.96" y2="396.4" />
+          <circle class="cls-1" cx="423.53" cy="396.4" r="15.03" />
+          <line class="cls-3" x1="433.75" y1="402.69" x2="537.56" y2="467.97" />
+          <circle class="cls-1" cx="542.02" cy="468.23" r="15.03" />
+          <path
+            class="cls-2"
+            d="M258.26,217.44c43.08,43.69,113.31,44.19,157,1.1"
+          />
+        </svg>
+      </div>-->
+    </div>
+
+    <div class="container">
+      <div id="Title-Container1">
+        Controller Layer
+      </div>
+      <div id="Title-Container2">
+        Device Layer
+      </div>
+
+
+      <div class="data-line2"></div>
+      <!-- Erster Wrapper -->
+      <div class="tile-wrapper">
+          <div class="tile" id="tile1">
+              <img src="./images/ctrlX1.PNG" width="70vh" alt="Tile Image" />
+              <div class="name">ctrlX core</div>
+          </div>
+          <div class="tile" id="tile2">
+              <img src="./images/ctrlX2.PNG" width="130vh" alt="Tile Image" />
+              <div class="name">ctrlX I/O</div>
+          </div>
+          <div class="tile" id="tile3">
+              <img src="./images/ctrlX3.PNG" width="25vh" alt="Tile Image" />
+              <div class="name">ctrlX Drive</div>
+          </div>
+          
+      </div>
+      <div class="data-line"></div>
+      <!-- Zweiter Wrapper -->
+      <div class="tile-wrapper2">
+          <div class="tile" id="tile4">
+              <img src="./images/KUKA_Scara.PNG" width="100vh" alt="Tile Image" />
+              <div class="name">KR Scara</div>
+          </div>
+          <div class="tile" id="tile5">
+              <img src="./images/LinearMotion.PNG" width="130vh" alt="Tile Image" />
+              <div class="name">Linearmodule</div>
+          </div>
+          <div class="tile" id="tile6">
+              <img src="./images/SICKS300.PNG" width="110vh" alt="Tile Image" />
+              <div class="name">SICK S300</div>
+          </div>
+      </div>
+
+
+  </div>
+
+    <div id="Select-Table">
+      <div id="Select-Body">
+        <button class="Select-Button" name="0">
+          <div class="Select-Icon" name="0">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M21.5315 11.5857L20.75 10.9605V21.25H22C22.4142 21.25 22.75 21.5858 22.75 22C22.75 22.4143 22.4142 22.75 22 22.75H2.00003C1.58581 22.75 1.25003 22.4143 1.25003 22C1.25003 21.5858 1.58581 21.25 2.00003 21.25H3.25003V10.9605L2.46855 11.5857C2.1451 11.8445 1.67313 11.792 1.41438 11.4686C1.15562 11.1451 1.20806 10.6731 1.53151 10.4144L9.65742 3.91366C11.027 2.818 12.9731 2.818 14.3426 3.91366L22.4685 10.4144C22.792 10.6731 22.8444 11.1451 22.5857 11.4686C22.3269 11.792 21.855 11.8445 21.5315 11.5857ZM12 6.75004C10.4812 6.75004 9.25003 7.98126 9.25003 9.50004C9.25003 11.0188 10.4812 12.25 12 12.25C13.5188 12.25 14.75 11.0188 14.75 9.50004C14.75 7.98126 13.5188 6.75004 12 6.75004ZM13.7459 13.3116C13.2871 13.25 12.7143 13.25 12.0494 13.25H11.9507C11.2858 13.25 10.7129 13.25 10.2542 13.3116C9.76255 13.3777 9.29128 13.5268 8.90904 13.9091C8.52679 14.2913 8.37773 14.7626 8.31163 15.2542C8.24996 15.7129 8.24999 16.2858 8.25003 16.9507L8.25003 21.25H9.75003H14.25H15.75L15.75 16.9507L15.75 16.8271C15.7498 16.2146 15.7462 15.6843 15.6884 15.2542C15.6223 14.7626 15.4733 14.2913 15.091 13.9091C14.7088 13.5268 14.2375 13.3777 13.7459 13.3116Z"
+                fill="#071930"
+              />
+              <g opacity="0.5">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10.75 9.5C10.75 8.80964 11.3096 8.25 12 8.25C12.6904 8.25 13.25 8.80964 13.25 9.5C13.25 10.1904 12.6904 10.75 12 10.75C11.3096 10.75 10.75 10.1904 10.75 9.5Z"
+                  fill="#071930"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10.75 9.5C10.75 8.80964 11.3096 8.25 12 8.25C12.6904 8.25 13.25 8.80964 13.25 9.5C13.25 10.1904 12.6904 10.75 12 10.75C11.3096 10.75 10.75 10.1904 10.75 9.5Z"
+                  fill="#071930"
+                />
+              </g>
+              <path
+                opacity="0.5"
+                d="M12.0494 13.25C12.7142 13.25 13.2871 13.2499 13.7458 13.3116C14.2375 13.3777 14.7087 13.5268 15.091 13.909C15.4732 14.2913 15.6223 14.7625 15.6884 15.2542C15.7462 15.6842 15.7498 16.2146 15.75 16.827L15.75 21.25H8.25L8.25 16.9506C8.24997 16.2858 8.24993 15.7129 8.31161 15.2542C8.37771 14.7625 8.52677 14.2913 8.90901 13.909C9.29126 13.5268 9.76252 13.3777 10.2542 13.3116C10.7129 13.2499 11.2858 13.25 11.9506 13.25H12.0494Z"
+                fill="#071930"
+              />
+              <path
+                opacity="0.5"
+                d="M16 3H18.5C18.7761 3 19 3.22386 19 3.5L19 7.63955L15.5 4.83955V3.5C15.5 3.22386 15.7239 3 16 3Z"
+                fill="#071930"
+              />
+            </svg>
+          </div>
+          <span class="button-label">Home</span>
+        </button>
+        <button class="Select-Button" name="1">
+          <div class="Select-Icon">
+            <svg
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 512 512"
+              xml:space="preserve"
+            >
+              <rect
+                x="252.257"
+                y="131.108"
+                transform="matrix(-0.5882 -0.8087 0.8087 -0.5882 414.334 510.6573)"
+                style="fill: #0052b4"
+                width="169.844"
+                height="37.463"
+              />
+              <path
+                style="fill: #071930"
+                d="M455.805,318.439h-37.463v-49.951c0-13.772-11.204-24.976-24.976-24.976
+                        s-24.976,11.204-24.976,24.976v49.951h-37.463v-49.951c0-34.429,28.01-62.439,62.439-62.439s62.439,28.01,62.439,62.439V318.439z"
+              />
+              <g>
+                <polyline
+                  style="fill: #071930"
+                  points="199.805,280.976 349.659,443.317 237.268,443.317 110.31,305.952 	"
+                />
+                <polygon
+                  style="fill: #071930"
+                  points="110.31,206.048 224.78,81.171 287.22,81.171 291.382,131.122 199.805,231.024 	"
+                />
+                <rect
+                  x="56.195"
+                  y="437.073"
+                  style="fill: #071930"
+                  width="337.171"
+                  height="74.927"
+                />
+              </g>
+              <rect
+                x="224.78"
+                y="437.073"
+                style="fill: #071930"
+                width="168.585"
+                height="74.927"
+              />
+              <circle style="fill: #071930" cx="137.366" cy="256" r="62.439" />
+              <path
+                style="fill: #003778"
+                d="M137.366,337.171c-44.758,0-81.171-36.413-81.171-81.171s36.413-81.171,81.171-81.171
+                        s81.171,36.413,81.171,81.171S182.123,337.171,137.366,337.171z M137.366,212.293c-24.1,0-43.707,19.607-43.707,43.707
+                        s19.607,43.707,43.707,43.707S181.073,280.1,181.073,256S161.466,212.293,137.366,212.293z"
+              />
+              <circle
+                style="fill: #071930"
+                cx="287.22"
+                cy="81.171"
+                r="62.439"
+              />
+              <path
+                style="fill: #003778"
+                d="M287.22,162.341c-44.758,0-81.171-36.413-81.171-81.171S242.462,0,287.22,0
+                        s81.171,36.413,81.171,81.171S331.977,162.341,287.22,162.341z M287.22,37.463c-24.1,0-43.707,19.607-43.707,43.707
+                        s19.607,43.707,43.707,43.707s43.707-19.607,43.707-43.707S311.32,37.463,287.22,37.463z"
+              />
+            </svg>
+          </div>
+          <span class="button-label">Robots</span>
+        </button>
+        <button class="Select-Button" name="2">
+          <div class="Select-Icon">
+            <svg
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 512 512"
+              xml:space="preserve"
+            >
+              <rect
+                x="16.696"
+                y="253.797"
+                style="fill: #b0b0b0"
+                width="55.786"
+                height="33.391"
+              />
+              <rect
+                y="211.178"
+                style="fill: #071930"
+                width="33.391"
+                height="118.628"
+              />
+              <path
+                style="fill: #071930"
+                d="M494.32,196.801l-4.858-8.131h-85.516v39.564h-8.557v-57.371h-44.32l-28.138-24.95h-46.53v-22.695
+           h14.966V89.828H172.742v33.391h14.966v22.695h-48.443l-28.138,24.95H55.791v199.255h83.474l58.709,52.054h197.414v-58.444h8.557
+           v39.565h85.516l4.858-8.132c1.81-3.027,17.68-31.537,17.68-99.181S496.13,199.83,494.32,196.801z"
+              />
+              <path
+                style="fill: #071930"
+                d="M494.32,196.801l-4.858-8.131h-85.516v39.564h-8.557v-57.371h-44.32l-28.138-24.95h-46.53v-22.695
+           h14.966V89.828h-59.312v332.345h163.334v-58.444h8.557v39.565h85.516l4.858-8.132c1.81-3.027,17.68-31.537,17.68-99.181
+           S496.13,199.83,494.32,196.801z"
+              />
+              <path
+                style="fill: #f1f1f1"
+                d="M468.927,369.903h-31.59v-39.565h-75.34v58.444H210.646l-58.709-52.054H89.183V204.255h34.617
+           l28.138-24.95h35.772H221.1v-33.391v-22.695h21.909v22.695v33.391h33.391h33.858l28.138,24.95h23.601v57.371h75.34v-39.564h31.59
+           c3.873,11.386,9.681,34.956,9.681,73.921C478.609,334.948,472.801,358.516,468.927,369.903z"
+              />
+              <path
+                style="fill: #d7d7d7"
+                d="M468.927,369.903h-31.59v-39.565h-75.34v58.444H232.054V123.22h10.955v22.695v33.391H276.4h33.858
+           l28.138,24.95h23.601v57.371h75.34v-39.564h31.59c3.873,11.386,9.681,34.956,9.681,73.921
+           C478.609,334.948,472.801,358.516,468.927,369.903z"
+              />
+              <polygon
+                style="fill: #071930"
+                points="247.542,370.834 216.566,358.365 239.4,301.643 175.272,301.643 216.566,199.061 
+           247.542,211.53 224.709,268.252 288.837,268.252 "
+              />
+              <g>
+                <polygon
+                  style="fill: #071930"
+                  points="247.542,211.53 231.962,205.258 231.962,250.235 	"
+                />
+                <polygon
+                  style="fill: #071930"
+                  points="288.837,268.252 231.962,268.252 231.962,301.643 239.4,301.643 231.962,320.122 
+               231.962,364.562 247.542,370.834 	"
+                />
+              </g>
+            </svg>
+          </div>
+          <span class="button-label">Motion</span>
+        </button>
+        <button class="Select-Button" name="3">
+          <div class="Select-Icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" color="#071930" fill="#071930"  viewBox="0 0 16 16">
+              <path color="#071930" fill="#071930" d="M6.634 1.135A7 7 0 0 1 15 8a.5.5 0 0 1-1 0 6 6 0 1 0-6.5 5.98v-1.005A5 5 0 1 1 13 8a.5.5 0 0 1-1 0 4 4 0 1 0-4.5 3.969v-1.011A2.999 2.999 0 1 1 11 8a.5.5 0 0 1-1 0 2 2 0 1 0-2.5 1.936v-1.07a1 1 0 1 1 1 0V15.5a.5.5 0 0 1-1 0v-.518a7 7 0 0 1-.866-13.847"/>
+            </svg>
+          </div>
+          <span class="button-label">Scaner</span>
+        </button>
+        <button class="Select-Button" name="3">
+          <div class="Select-Icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#071930" color="#071930" viewBox="0 0 16 16">
+              <path color="#071930" fill="#071930" d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8z"/>
+            </svg>
+          </div>
+          <span class="button-label">Assets</span>
+        </button>
+       
+        <button class="Select-Button" name="4">
+          <div class="Select-Icon">
+            <svg
+              width="800px"
+              height="800px"
+              viewBox="0 0 1024 1024"
+              class="icon"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M430.403803 30.365353L275.476805 77.487569 159.535812 171.053984 107.328464 284.282907l-10.170262 96.956502 17.628455 114.245949 44.749155 99.668573 65.767697 65.767697V904.66892l171.877437 46.783207 138.654579 21.69656h98.651546v-174.928515l92.888398-18.306472V171.053984l-118.314054-105.77073L430.403803 30.365353z"
+                fill="#071930"
+              />
+              <path
+                d="M443.286136 54.095965a326.804435 326.804435 0 0 1 169.504375 46.444199s96.956503 69.835803 101.702625 96.278485h62.716619a381.384844 381.384844 0 1 0-581.400007 474.612251v264.087816L655.166605 1024v-201.032189H706.017917a54.580409 54.580409 0 0 0 54.580409-54.580409v-162.046182a101.702625 101.702625 0 0 0-3.051078-24.747639 380.706827 380.706827 0 0 0 20.001516-38.986006L739.918792 536.505417c-5.085131 11.187289-20.679534 6.441166-27.459708 16.950438l-11.865307 19.323498 5.42414 22.035569a48.139243 48.139243 0 0 1 0 11.526298v162.046182h-105.092712v189.505892l-351.891083-67.80175v-243.747292L231.405667 630.410841a331.211549 331.211549 0 0 1-84.752188-109.838835 327.482453 327.482453 0 0 1 296.632657-466.476041"
+                fill="#071930"
+              />
+              <path
+                d="M859.92789 133.424013A48.139243 48.139243 0 0 1 909.423168 181.563255v384.096915a48.139243 48.139243 0 0 1-48.139243 48.139242h-2.034052a48.139243 48.139243 0 0 1-48.139243-43.732129L804.330455 508.706699l-61.021575 15.255394a154.248981 154.248981 0 0 1-37.290963 4.746123 153.570964 153.570964 0 1 1 0-307.141928 154.58799 154.58799 0 0 1 37.290963 4.746122l61.021575 15.255394 5.42414-62.716619a48.139243 48.139243 0 0 1 48.139243-43.732128z m0-53.902391h-2.034052a101.702625 101.702625 0 0 0-101.702626 92.888397 207.473355 207.473355 0 1 0 0 402.403387 101.702625 101.702625 0 0 0 101.702626 92.888397h2.034052a101.702625 101.702625 0 0 0 101.702625-101.702625V181.563255a101.702625 101.702625 0 0 0-101.702625-101.702625z"
+                fill="#071930"
+              />
+              <path
+                d="M706.017917 321.912878A51.868339 51.868339 0 1 1 654.149579 373.103199 51.868339 51.868339 0 0 1 706.017917 321.912878z m0-53.902391a105.431721 105.431721 0 1 0 105.431722 105.092712A105.431721 105.431721 0 0 0 706.017917 268.010487z"
+                fill="#071930"
+              />
+              <path
+                d="M79.529747 330.049088h465.798023V276.146697H79.529747z m0 126.789273h465.798023v-53.563383H79.529747z"
+                fill="#434A54"
+              />
+              <path
+                d="M777.548764 189.021448l35.934927-64.072654 52.885365-13.56035 64.750672 38.986006 12.543323 123.399186-12.543323 301.717787-28.476735 53.224374h-75.598952l-35.595918-34.917901v-40.342041h-105.092713l-84.752188-34.917902-47.461225-69.157785-22.374577-79.328047 22.374577-81.701109 67.462742-74.581925 99.329563-24.747639h56.614462z"
+                fill="#071930"
+              />
+              <path
+                d="M704.661882 372.086173m-101.702625 0a101.702625 101.702625 0 1 0 203.405251 0 101.702625 101.702625 0 1 0-203.405251 0Z"
+                fill="#071930"
+              />
+            </svg>
+          </div>
+          <span class="button-label">AR</span>
+        </button>
+      
+      </div>
+    </div>
+    <div class="table-container">
+      <h1>ctrlX - System Information</h1>
+      <table class="modern-table" id="ctrlx-table">
+          <thead>
+              <tr>
+                  <th>Parameter</th>
+                  <th>Value</th>
+                  <th>Status</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>IP Address</td>
+                  <td id="ip-address">192.168.0.100</td>
+                  <td class="status active">Connected</td>
+              </tr>
+              <tr>
+                  <td>CPU Usage</td>
+                  <td id="cpu-usage">45%</td>
+                  <td class="status active">Normal</td>
+              </tr>
+              <tr>
+                  <td>Temperature</td>
+                  <td id="temperature">65°C</td>
+                  <td class="status idle">Warning</td>
+              </tr>
+              <tr>
+                  <td>Uptime</td>
+                  <td id="uptime">12d 5h 30m</td>
+                  <td class="status active">Running</td>
+              </tr>
+              <tr>
+                  <td>Firmware Version</td>
+                  <td id="firmware-version">1.12.3</td>
+                  <td class="status active">Updated</td>
+              </tr>
+              <tr>
+                  <td>Memory Usage</td>
+                  <td id="memory-usage">78%</td>
+                  <td class="status error">Critical</td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+    <div class="table-container">
+      <h1>KUKA Scara - Joint Positions</h1>
+      <table class="modern-table" id="joint-table">
+          <thead>
+              <tr>
+                  <th>Joint Name</th>
+                  <th>Angle Position (°)</th>
+                  <th>Speed (%)</th>
+                  <th>Status</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr id="joint-1" data-joint="1">
+                  <td>Joint 1</td>
+                  <td class="angle">45</td>
+                  <td class="speed">80</td>
+                  <td class="status active">Active</td>
+              </tr>
+              <tr id="joint-2" data-joint="2">
+                  <td>Joint 2</td>
+                  <td class="angle">90</td>
+                  <td class="speed">60</td>
+                  <td class="status idle">Idle</td>
+              </tr>
+              <tr id="joint-3" data-joint="3">
+                  <td>Joint 3</td>
+                  <td class="angle">-30</td>
+                  <td class="speed">50</td>
+                  <td class="status error">Error</td>
+              </tr>
+              <tr id="joint-4" data-joint="4">
+                  <td>Joint 4</td>
+                  <td class="angle">0</td>
+                  <td class="speed">100</td>
+                  <td class="status active">Active</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+  <div class="table-container">
+    <h1>MK110 Linear Module - Status</h1>
+    <table class="modern-table" id="mk110-table">
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Value</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Position (mm)</td>
+                <td id="position">150</td>
+                <td class="status active">In Position</td>
+            </tr>
+            <tr>
+                <td>Velocity (mm/s)</td>
+                <td id="velocity">250</td>
+                <td class="status active">Normal</td>
+            </tr>
+            <tr>
+                <td>Temperature (°C)</td>
+                <td id="temperature">45</td>
+                <td class="status active">Normal</td>
+            </tr>
+            <tr>
+                <td>Uptime</td>
+                <td id="uptime">72h 30m</td>
+                <td class="status active">Running</td>
+            </tr>
+            <tr>
+                <td>Load (%)</td>
+                <td id="load">65</td>
+                <td class="status active">Normal</td>
+            </tr>
+            <tr>
+                <td>Motor Status</td>
+                <td id="motor-status">Active</td>
+                <td class="status active">Running</td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+  <div id="scanner-container">
+    <div id="scanner-visualization"></div>
+    <img id="scanner-image" src="./images/SICKS300.PNG" alt="Scanner">
+    <!-- Scanner Waves -->
+    <div class="scanner-wave"></div>
+    <div class="scanner-wave"></div>
+</div>
+  <div class="table-container" id="asset-table">
+    <table class="modern-table">
+        <thead>
+            <tr>
+                <th>Device</th>
+                <th>Model</th>
+                <th>Location</th>
+                <th>Manual (PDF)</th>
+                <th>Next Maintenance</th>
+                <th>Power Usage (kWh)</th>
+                <th>CO₂ Emissions (kg)</th>
+                <th>Errors</th>
+                <th>Firmware</th>
+                <th>Network Status</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>KR Scara</td>
+                <td>KR Scara V2</td>
+                <td>Production Line A</td>
+                <td><a href="./images/KUKA.pdf" target="_blank">Download</a></td>
+                <td id="kr-scara-next-maintenance">2025-02-15</td>
+                <td id="kr-scara-power">125.8</td>
+                <td id="kr-scara-co2">32.1</td>
+                <td id="kr-scara-errors">None</td>
+                <td id="kr-scara-firmware">1.12.3</td>
+                <td id="kr-scara-network">Online</td>
+                <td class="status active">Operational</td>
+            </tr>
+            <tr>
+                <td>Sick S300</td>
+                <td>S300 V3</td>
+                <td>Safety Zone B</td>
+                <td><a href="./images/Bosch.pdf" target="_blank">Download</a></td>
+                <td id="sick-s300-next-maintenance">2025-03-10</td>
+                <td id="sick-s300-power">97.5</td>
+                <td id="sick-s300-co2">26.4</td>
+                <td id="sick-s300-errors">Laser alignment issue</td>
+                <td id="sick-s300-firmware">2.8.0</td>
+                <td id="sick-s300-network">Online</td>
+                <td class="status idle">Needs Inspection</td>
+            </tr>
+            <tr>
+                <td>Bosch Rexroth Linear Module</td>
+                <td>MK110</td>
+                <td>Assembly Line C</td>
+                <td><a href="./images/SICK.PDF" target="_blank">Download</a></td>
+                <td id="rexroth-next-maintenance">2025-04-05</td>
+                <td id="rexroth-power">185.3</td>
+                <td id="rexroth-co2">47.6</td>
+                <td id="rexroth-errors">High temperature detected</td>
+                <td id="rexroth-firmware">3.5.1</td>
+                <td id="rexroth-network">Offline</td>
+                <td class="status error">Critical</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="table-container">
+  <h1>SICK S300 - Scanner Parameters</h1>
+  <table class="modern-table" id="scanner-table">
+      <thead>
+          <tr>
+              <th>Parameter</th>
+              <th>Value</th>
+              <th>Unit</th>
+              <th>Status</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr id="field-range-safety" data-param="safety-range">
+              <td>Safety Field Range</td>
+              <td class="value">2</td>
+              <td class="unit">m</td>
+              <td class="status active">Active</td>
+          </tr>
+          <tr id="field-range-warning" data-param="warning-range">
+              <td>Warning Field Range</td>
+              <td class="value">8</td>
+              <td class="unit">m</td>
+              <td class="status active">Active</td>
+          </tr>
+          <tr id="scan-angle" data-param="scan-angle">
+              <td>Scan Angle</td>
+              <td class="value">270</td>
+              <td class="unit">°</td>
+              <td class="status idle">Idle</td>
+          </tr>
+          <tr id="response-time" data-param="response-time">
+              <td>Response Time</td>
+              <td class="value">60</td>
+              <td class="unit">ms</td>
+              <td class="status active">Active</td>
+          </tr>
+          <tr id="protection-class" data-param="protection-class">
+              <td>Protection Class</td>
+              <td class="value">IP65</td>
+              <td class="unit">-</td>
+              <td class="status active">Active</td>
+          </tr>
+          <tr id="operating-temp" data-param="operating-temp">
+              <td>Operating Temperature</td>
+              <td class="value">-10 to +50</td>
+              <td class="unit">°C</td>
+              <td class="status active">Active</td>
+          </tr>
+          <tr id="weight" data-param="weight">
+              <td>Weight</td>
+              <td class="value">1.3</td>
+              <td class="unit">kg</td>
+              <td class="status idle">Idle</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+
+</div>
+<div class="ar-guide">
+  <h1>How to Use AR Content</h1>
+  <p>Follow these steps to enjoy Augmented Reality content on your smartphone:</p>
+
+  <h2>For Android</h2>
+  <ul>
+      <li>Ensure your device supports ARCore (most modern Android devices do).</li>
+      <li>Open the provided link in Chrome or another AR-compatible browser.</li>
+      <li>Grant permissions to access your camera when prompted.</li>
+      <li>Point your camera at a flat surface to anchor the AR content.</li>
+  </ul>
+
+  <h2>For iPhone</h2>
+  <ul>
+      <li>Ensure your device supports ARKit (iPhone 6S or later).</li>
+      <li>Open the link in Safari for the best experience.</li>
+      <li>Allow access to your camera when asked.</li>
+      <li>Point your camera at a flat surface to place the AR object.</li>
+  </ul>
+</div>
+<div class="qr-container">
+
+  <div id="qr-code"></div>
+      <img src="./images/qrCode.PNG" alt="QR Code">
+  </div>
+ 
+</div>
+</div>
+
+<script>
+  const correctPassword = "1"; // Setze hier das gewünschte Passwort
+
+  function checkPassword() {
+    const inputPassword = document.getElementById("password-input").value;
+    const errorMessage = document.getElementById("error-message");
+
+    if (inputPassword === correctPassword) {
+      // Verstecke die Passwortseite und zeige den Inhalt
+      document.getElementById("password-screen").classList.add("hidden");
+      document.getElementById("main-content").classList.remove("hidden");
+    } else {
+      // Zeige eine Fehlermeldung an
+      errorMessage.style.display = "block";
+    }
+  }
+</script>
+    <div id="webgl"></div>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

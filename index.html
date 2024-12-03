@@ -182,15 +182,15 @@
       <!-- Erster Wrapper -->
       <div class="tile-wrapper">
           <div class="tile" id="tile1">
-              <img src="./images/ctrlX1.PNG" width="70vh" alt="Tile Image" />
+              <img src="./images/ctrlX1.PNG"  alt="Tile Image" />
               <div class="name">ctrlX core</div>
           </div>
           <div class="tile" id="tile2">
-              <img src="./images/ctrlX2.PNG" width="130vh" alt="Tile Image" />
+              <img src="./images/ctrlX2.PNG"  alt="Tile Image" />
               <div class="name">ctrlX I/O</div>
           </div>
           <div class="tile" id="tile3">
-              <img src="./images/ctrlX3.PNG" width="25vh" alt="Tile Image" />
+              <img src="./images/ctrlX3.PNG"  alt="Tile Image" />
               <div class="name">ctrlX Drive</div>
           </div>
           
@@ -199,15 +199,15 @@
       <!-- Zweiter Wrapper -->
       <div class="tile-wrapper2">
           <div class="tile" id="tile4">
-              <img src="./images/KUKA_Scara.PNG" width="100vh" alt="Tile Image" />
+              <img src="./images/KUKA_Scara.PNG"  alt="Tile Image" />
               <div class="name">KR Scara</div>
           </div>
           <div class="tile" id="tile5">
-              <img src="./images/LinearMotion.PNG" width="130vh" alt="Tile Image" />
+              <img src="./images/LinearMotion.PNG"  alt="Tile Image" />
               <div class="name">Linearmodule</div>
           </div>
           <div class="tile" id="tile6">
-              <img src="./images/SICKS300.PNG" width="110vh" alt="Tile Image" />
+              <img src="./images/SICKS300.PNG"  alt="Tile Image" />
               <div class="name">SICK S300</div>
           </div>
       </div>
@@ -592,7 +592,6 @@
         <thead>
             <tr>
                 <th>Device</th>
-                <th>Model</th>
                 <th>Location</th>
                 <th>Manual (PDF)</th>
                 <th>Next Maintenance</th>
@@ -607,7 +606,6 @@
         <tbody>
             <tr>
                 <td>KR Scara</td>
-                <td>KR Scara V2</td>
                 <td>Production Line A</td>
                 <td><a href="./images/KUKA.pdf" target="_blank">Download</a></td>
                 <td id="kr-scara-next-maintenance">2025-02-15</td>
@@ -620,7 +618,6 @@
             </tr>
             <tr>
                 <td>Sick S300</td>
-                <td>S300 V3</td>
                 <td>Safety Zone B</td>
                 <td><a href="./images/Bosch.pdf" target="_blank">Download</a></td>
                 <td id="sick-s300-next-maintenance">2025-03-10</td>
@@ -633,7 +630,6 @@
             </tr>
             <tr>
                 <td>Bosch Rexroth Linear Module</td>
-                <td>MK110</td>
                 <td>Assembly Line C</td>
                 <td><a href="./images/SICK.PDF" target="_blank">Download</a></td>
                 <td id="rexroth-next-maintenance">2025-04-05</td>
@@ -710,7 +706,7 @@
   <h1>How to Use AR Content</h1>
   <p>Follow these steps to enjoy Augmented Reality content on your smartphone:</p>
 
-  <h2>For Android</h2>
+  <h4>For Android</h4>
   <ul>
       <li>Ensure your device supports ARCore (most modern Android devices do).</li>
       <li>Open the provided link in Chrome or another AR-compatible browser.</li>
@@ -718,7 +714,7 @@
       <li>Point your camera at a flat surface to anchor the AR content.</li>
   </ul>
 
-  <h2>For iPhone</h2>
+  <h4>For iPhone</h4>
   <ul>
       <li>Ensure your device supports ARKit (iPhone 6S or later).</li>
       <li>Open the link in Safari for the best experience.</li>
@@ -737,7 +733,7 @@
 
 <script>
   const correctPassword = "ctrlXmeetsGOYA"; // Setze hier das gewünschte Passwort
-
+  // const correctPassword = "";
   function checkPassword() {
     const inputPassword = document.getElementById("password-input").value;
     const errorMessage = document.getElementById("error-message");

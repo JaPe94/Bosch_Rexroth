@@ -37425,7 +37425,6 @@ exports.loadPage3 = loadPage3;
 exports.loadPage4 = loadPage4;
 exports.loadPage5 = loadPage5;
 exports.loadPage6 = loadPage6;
-var THREE = _interopRequireWildcard(require("../../build/three.module.js"));
 var _script = require("../script.js");
 var DECL = _interopRequireWildcard(require("./declaration.js"));
 var _loadRobots = require("./loadRobots.js");
@@ -37513,7 +37512,7 @@ function loadPage6(event) {
   (0, _loadRobots.setVisibilityByName)(_script.scene, 'scara', false);
   (0, _loadRobots.setVisibilityByName)(_script.scene, 'linear', false);
 }
-},{"../../build/three.module.js":"../build/three.module.js","../script.js":"script.js","./declaration.js":"Bosch/declaration.js","./loadRobots.js":"Bosch/loadRobots.js"}],"script.js":[function(require,module,exports) {
+},{"../script.js":"script.js","./declaration.js":"Bosch/declaration.js","./loadRobots.js":"Bosch/loadRobots.js"}],"script.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37590,7 +37589,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49459" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50590" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
